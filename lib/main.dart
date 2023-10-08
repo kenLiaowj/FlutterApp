@@ -12,7 +12,10 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: const Home(),
-      theme: ThemeData(primarySwatch: Colors.red),
+      theme: ThemeData(
+          primarySwatch: Colors.yellow,
+          highlightColor: const Color.fromRGBO(255, 255, 255, 0.5),
+          splashColor: const Color.fromRGBO(255, 255, 255, 0.6)),
     );
   }
 }
@@ -20,49 +23,49 @@ class App extends StatelessWidget {
 class Home extends StatelessWidget {
   const Home({super.key});
 
-  Widget _listItemBuilder(BuildContext context, int index) {
-    return Container(
-      color: const Color.fromARGB(255, 237, 236, 236),
-      margin: const EdgeInsets.only(top: 8, left: 8, right: 8),
-      child: Column(
-        children: [
-          Image.network(posts[index].imageUrl),
-          const SizedBox(
-            height: 16,
-          ),
-          Text(
-            posts[index].title,
-            style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
-          ),
-          const SizedBox(
-            height: 8,
-          ),
-          Text(
-            posts[index].author,
-            style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.normal),
-          ),
-          const SizedBox(
-            height: 8,
-          ),
-        ],
-      ),
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Bruce'),
-        foregroundColor: Colors.black,
-        elevation: 0.0,
-      ),
-      body: ListView.builder(
-        itemCount: posts.length,
-        itemBuilder: (context, index) {
-          return _listItemBuilder(context, index);
-        },
-      ),
-    );
+    return DefaultTabController(
+        length: 3,
+        child: Scaffold(
+          appBar: AppBar(
+            leading: IconButton(
+              icon: Icon(Icons.menu),
+              tooltip: "Menu",
+              onPressed: () => debugPrint('Navigation button is press'),
+            ),
+            title: const Text('Bruce'),
+            foregroundColor: Colors.black,
+            elevation: 0.0,
+            bottom: const TabBar(
+                unselectedLabelColor: Colors.black54,
+                indicatorColor: Colors.black54,
+                indicatorSize: TabBarIndicatorSize.label,
+                indicatorWeight: 1.0,
+                indicatorPadding: EdgeInsets.only(bottom: 0),
+                tabs: [
+                  Icon(Icons.local_florist),
+                  Icon(Icons.change_history),
+                  Icon(Icons.directions_bike)
+                ]),
+          ),
+          body: const TabBarView(children: [
+            Icon(
+              Icons.local_florist,
+              size: 128,
+              color: Colors.black12,
+            ),
+            Icon(
+              Icons.change_history,
+              size: 128,
+              color: Colors.black12,
+            ),
+            Icon(
+              Icons.directions_bike,
+              size: 128,
+              color: Colors.black12,
+            )
+          ]),
+        ));
   }
 }
