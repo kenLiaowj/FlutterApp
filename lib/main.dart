@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'model/post.dart';
+import 'demo/drawer_demo.dart';
+import 'demo/bottomNavigationBarDemo.dart';
+import 'demo/listView_demo.dart';
 
 void main() {
   runApp(const App());
@@ -50,11 +53,7 @@ class Home extends StatelessWidget {
                 ]),
           ),
           body: const TabBarView(children: [
-            Icon(
-              Icons.local_florist,
-              size: 128,
-              color: Colors.black12,
-            ),
+            ListViewDemo(),
             Icon(
               Icons.change_history,
               size: 128,
@@ -66,54 +65,8 @@ class Home extends StatelessWidget {
               color: Colors.black12,
             )
           ]),
-          drawer: Drawer(
-            width: 300,
-            backgroundColor: Colors.white,
-            child: ListView(
-              children: [
-                DrawerHeader(
-                  child: Text('header'.toUpperCase()),
-                  decoration: BoxDecoration(color: Colors.grey[100]),
-                ),
-                ListTile(
-                  title: const Text(
-                    'Messages',
-                    textAlign: TextAlign.right,
-                  ),
-                  trailing: const Icon(
-                    Icons.message,
-                    size: 22,
-                    color: Color.fromARGB(255, 225, 225, 225),
-                  ),
-                  onTap: () => Navigator.pop(context),
-                ),
-                ListTile(
-                  title: const Text(
-                    'History',
-                    textAlign: TextAlign.right,
-                  ),
-                  trailing: const Icon(
-                    Icons.history,
-                    size: 22,
-                    color: Color.fromARGB(255, 225, 225, 225),
-                  ),
-                  onTap: () => Navigator.pop(context),
-                ),
-                ListTile(
-                  title: const Text(
-                    'Settings',
-                    textAlign: TextAlign.right,
-                  ),
-                  trailing: const Icon(
-                    Icons.settings,
-                    size: 22,
-                    color: Color.fromARGB(255, 225, 225, 225),
-                  ),
-                  onTap: () => Navigator.pop(context),
-                )
-              ],
-            ),
-          ),
+          drawer: const DrawerDemo(),
+          bottomNavigationBar: BottomNavigationBarDemo(),
         ));
   }
 }
