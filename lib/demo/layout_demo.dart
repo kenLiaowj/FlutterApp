@@ -9,9 +9,13 @@ class LayoutDemo extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          AspectRatio(
-            aspectRatio: 16.0 / 9.0,
-            child: Container(color: Colors.orange),
+          ConstrainedBox(
+            constraints: BoxConstraints(
+                minHeight: 10.0, maxHeight: 100.0, maxWidth: 200.0),
+            child: Container(
+              height: 200.0,
+              color: Colors.yellow,
+            ),
           )
         ],
       ),
