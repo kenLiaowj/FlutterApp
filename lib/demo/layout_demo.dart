@@ -5,17 +5,42 @@ class LayoutDemo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
-      crossAxisAlignment: CrossAxisAlignment.end,
-      children: [
-        IconBadge(Icons.kayaking_sharp),
-        IconBadge(
-          Icons.switch_camera,
-          size: 16,
-        ),
-        IconBadge(Icons.pool)
-      ],
+    return Container(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          SizedBox(
+            width: 200.0,
+            height: 300.0,
+            child: Container(
+              alignment: Alignment(-1, -1),
+              decoration: BoxDecoration(
+                  color: Color.fromRGBO(3, 54, 255, 1.0),
+                  borderRadius: BorderRadius.circular(8)),
+              child: Icon(
+                Icons.ac_unit,
+                color: Colors.white,
+              ),
+            ),
+          ),
+          SizedBox(
+            height: 32,
+          ),
+          SizedBox(
+            width: 100.0,
+            height: 100.0,
+            child: Container(
+              decoration: BoxDecoration(
+                  color: Color.fromRGBO(3, 54, 255, 1.0),
+                  borderRadius: BorderRadius.circular(8)),
+              child: Icon(
+                Icons.brightness_2,
+                color: Colors.white,
+              ),
+            ),
+          )
+        ],
+      ),
     );
   }
 }
