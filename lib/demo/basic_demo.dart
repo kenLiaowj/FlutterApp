@@ -32,7 +32,6 @@ class ContainerDemo extends StatelessWidget {
                 color: Colors.green,
                 border: Border.all(
                     color: Colors.blue, width: 2, style: BorderStyle.solid),
-                // borderRadius: BorderRadius.circular(8)),
                 // borderRadius: BorderRadius.all(Radius.circular(20)),
                 shape: BoxShape.circle,
                 gradient: const LinearGradient(
