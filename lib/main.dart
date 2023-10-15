@@ -6,6 +6,7 @@ import 'demo/listView_demo.dart';
 import 'demo/basic_demo.dart';
 import 'demo/layout_demo.dart';
 import 'demo/view_demo.dart';
+import 'demo/sliver_demo.dart';
 
 void main() {
   runApp(const App());
@@ -17,7 +18,7 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: const Home(),
+      home: Home(),
       theme: ThemeData(
           primarySwatch: Colors.yellow,
           highlightColor: const Color.fromRGBO(255, 255, 255, 0.5),
@@ -60,7 +61,7 @@ class Home extends StatelessWidget {
             ListViewDemo(),
             BasicDemo(),
             LayoutDemo(),
-            ViewDemo()
+            SliverDemo()
           ]),
           drawer: const DrawerDemo(),
           bottomNavigationBar: BottomNavigationBarDemo(),
