@@ -8,6 +8,7 @@ import 'demo/layout_demo.dart';
 import 'demo/view_demo.dart';
 import 'demo/sliver_demo.dart';
 import 'demo/navigator_demo.dart';
+import 'demo/form_demo.dart';
 
 void main() {
   runApp(const App());
@@ -19,14 +20,15 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Home(),
+      home: FormDemo(),
       routes: {
         '/home': (context) => RoutePage('Home'),
       },
       theme: ThemeData(
           primarySwatch: Colors.yellow,
-          highlightColor: const Color.fromRGBO(255, 255, 255, 0.5),
-          splashColor: const Color.fromRGBO(255, 255, 255, 0.6)),
+          highlightColor: Color.fromRGBO(5, 3, 3, 0.498),
+          splashColor: Colors.white70,
+          focusColor: Colors.black),
     );
   }
 }
