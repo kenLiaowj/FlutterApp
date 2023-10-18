@@ -21,7 +21,22 @@ class ButtonsDemo extends StatelessWidget {
         padding: EdgeInsets.all(16.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [ColumnItem(ButtonType.iconButton)],
+          children: [
+            ColumnItem(ButtonType.iconButton),
+            ColumnItem(ButtonType.textButton),
+            ColumnItem(ButtonType.elevatedButton),
+            ColumnItem(ButtonType.outlinedButton),
+            ButtonBar(
+              alignment: MainAxisAlignment.center,
+              children: [
+                ColumnItem(ButtonType.elevatedButton),
+                SizedBox(
+                  width: 20,
+                ),
+                ColumnItem(ButtonType.outlinedButton)
+              ],
+            )
+          ],
         ),
       ),
     );
@@ -36,12 +51,34 @@ class ColumnItem extends StatelessWidget {
   Widget _createButton(ButtonType type) {
     switch (this.type) {
       case ButtonType.textButton:
-        return IconButton(
-            onPressed: () {}, icon: Icon(Icons.add_alarm_rounded));
+        return TextButton.icon(
+            style: ButtonStyle(
+                iconColor: MaterialStateProperty.all(Colors.black),
+                foregroundColor: MaterialStateProperty.all(Colors.black)),
+            onPressed: () {},
+            icon: Icon(Icons.add),
+            label: Text('Add'));
       case ButtonType.elevatedButton:
-        return Container();
+        return ElevatedButton.icon(
+            style: ButtonStyle(
+                iconColor: MaterialStateProperty.all(Colors.red),
+                foregroundColor: MaterialStateProperty.all(Colors.red),
+                backgroundColor: MaterialStateProperty.all(Colors.blue),
+                elevation: MaterialStateProperty.all(5.0)),
+            onPressed: () {},
+            icon: Icon(Icons.add),
+            label: Text('Add'));
       case ButtonType.outlinedButton:
-        return Container();
+        return OutlinedButton.icon(
+            style: ButtonStyle(
+                side: MaterialStateProperty.all(
+                    BorderSide(width: 2.0, color: Colors.orange)),
+                foregroundColor: MaterialStateProperty.all(Colors.orange),
+                backgroundColor: MaterialStateProperty.all(Colors.transparent),
+                overlayColor: MaterialStateProperty.all(Colors.green)),
+            onPressed: () {},
+            icon: Icon(Icons.add),
+            label: Text('Add'));
       case ButtonType.iconButton:
         return IconButton(
           iconSize: 32,

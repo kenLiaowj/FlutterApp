@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'material_design/button_demo.dart';
+import 'material_design/floating_button.dart';
 
 class MaterialComponents extends StatelessWidget {
   const MaterialComponents({super.key});
@@ -12,7 +13,10 @@ class MaterialComponents extends StatelessWidget {
         elevation: 0.0,
       ),
       body: ListView(
-        children: [ListViewItem('Buttons Demo', ButtonsDemo())],
+        children: [
+          ListViewItem('Buttons Demo', ButtonsDemo()),
+          ListViewItem('Floating Button Demo', FloatingButtonDemo())
+        ],
       ),
     );
   }
