@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_001/demo/material_design/popup_menu.dart';
 import 'material_design/button_demo.dart';
 import 'material_design/floating_button.dart';
 
@@ -15,7 +16,8 @@ class MaterialComponents extends StatelessWidget {
       body: ListView(
         children: [
           ListViewItem('Buttons Demo', ButtonsDemo()),
-          ListViewItem('Floating Button Demo', FloatingButtonDemo())
+          ListViewItem('Floating Button Demo', FloatingButtonDemo()),
+          ListViewItem('Popup Menu Demo', PopupMenuDemo())
         ],
       ),
     );

@@ -10,6 +10,21 @@ class FloatingButtonDemo extends StatelessWidget {
         title: Text('Floating Button'),
         elevation: 0.0,
       ),
+      body: Container(
+        padding: EdgeInsets.all(16),
+        alignment: Alignment.center,
+        child: PopupMenuButton(
+          elevation: 1.0,
+          shadowColor: Colors.red,
+          itemBuilder: (context) {
+            return [
+              PopupMenuItem(child: Text('Home')),
+              PopupMenuItem(child: Text('Home')),
+              PopupMenuItem(child: Text('Home'))
+            ];
+          },
+        ),
+      ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
         elevation: 0.0,
