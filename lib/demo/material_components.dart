@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_001/demo/material_design/checkbox_demo.dart';
 import 'package:flutter_application_001/demo/material_design/popup_menu.dart';
+import 'package:flutter_application_001/demo/material_design/ratio_demo.dart';
 import 'material_design/button_demo.dart';
 import 'material_design/floating_button.dart';
+import 'material_design/date_picker_demo.dart';
 
 class MaterialComponents extends StatelessWidget {
   const MaterialComponents({super.key});
@@ -17,7 +20,10 @@ class MaterialComponents extends StatelessWidget {
         children: [
           ListViewItem('Buttons Demo', ButtonsDemo()),
           ListViewItem('Floating Button Demo', FloatingButtonDemo()),
-          ListViewItem('Popup Menu Demo', PopupMenuDemo())
+          ListViewItem('Popup Menu Demo', PopupMenuDemo()),
+          ListViewItem('Checkbox Demo', CheckBoxDemo()),
+          ListViewItem('Radio Demo', RadioDemo()),
+          ListViewItem('DatePicker Demo', DatePickerDemo()),
         ],
       ),
     );

@@ -10,6 +10,7 @@ import 'demo/sliver_demo.dart';
 import 'demo/navigator_demo.dart';
 import 'demo/form_demo.dart';
 import 'demo/material_components.dart';
+import 'package:intl/intl.dart';
 
 void main() {
   runApp(const App());
