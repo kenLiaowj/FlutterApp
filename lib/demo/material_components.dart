@@ -5,6 +5,8 @@ import 'package:flutter_application_001/demo/material_design/ratio_demo.dart';
 import 'material_design/button_demo.dart';
 import 'material_design/floating_button.dart';
 import 'material_design/date_picker_demo.dart';
+import 'material_design/bottom_sheet_demo.dart';
+import 'material_design/expansion_panel_demo.dart';
 
 class MaterialComponents extends StatelessWidget {
   const MaterialComponents({super.key});
@@ -24,6 +26,8 @@ class MaterialComponents extends StatelessWidget {
           ListViewItem('Checkbox Demo', CheckBoxDemo()),
           ListViewItem('Radio Demo', RadioDemo()),
           ListViewItem('DatePicker Demo', DatePickerDemo()),
+          ListViewItem('BottomSheet Demo', BottomSheetDemo()),
+          ListViewItem('ExpansionPanel Demo', ExpansionPanelDemo()),
         ],
       ),
     );
